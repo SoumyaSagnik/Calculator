@@ -211,10 +211,10 @@ const App = () => {
               result = Math.pow(nums[0], nums[1]);
             }
           } else if (screenValueString.includes("-")) {
-            let nums = screenValueString.split("-");
-            if (nums[1] !== "") {
-              result = Number(nums[0]) - Number(nums[1]);
-            }
+            const nums = screenText.split("-");
+            if (nums.length === 3) {
+              result = Number(-nums[1]) - Number(nums[2]);
+            } else result = Number(nums[0]) - Number(nums[1]);
           } else return;
           const decimal = result.toString().split(".");
           if (decimal.length === 1) setScreenValue(Number(decimal[0]));
